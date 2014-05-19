@@ -11,8 +11,10 @@ public class main {
 		list.insertSort(4);
 		list.print();
 		System.out.println();
-		list = pairWiseSwap(list);
-		list.adjustindex();
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		int m = s.nextInt();
+		list = DeleteNnodesAfterMnodes(list,n,m);
 		list.print();
 	}
 	
@@ -73,4 +75,34 @@ public class main {
 		return list;
 	}
 	
+	static linkedlist DeleteNnodesAfterMnodes(linkedlist list,int n,int m)
+	{
+		Node temp = list.head;
+		Node prev = temp;
+		int x = 0;  	//to count n nodes
+		int y = 0;		//to count m nodes
+		while(temp!=null)
+		{
+			if(temp == list.head || y < m)
+			{
+				y++;
+				temp = temp.getNext();
+				continue;
+			}
+			else
+			{
+				y=0;
+				while(x<n)
+				{
+					prev = temp.getNext();
+					list.deleteByNode(temp);
+					x++;
+					temp = prev;
+				}
+				x=0;
+			}
+		}
+		list.adjustindex();
+		return list;
+	}
 }
