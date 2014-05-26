@@ -267,4 +267,21 @@ public class linkedlist {
 		return false;
 	}
 
+	public void reverse()
+	{
+		Node prev=null;
+		Node current = head;
+		Node next = head.getNext();
+		while(current!=null)
+		{
+			current.setNext(prev);
+			prev = current;
+			current = next;
+			if(next!=null)
+				next = next.getNext();
+		}
+		head = prev;
+		adjustindex();
+	}
+	
 }

@@ -2,21 +2,16 @@ import java.util.Scanner;
 public class main {
 	public static void main(String args[])
 	{
-		queue q = new queue(5);
-		System.out.println(q.isEmpty());
-		q.enqueue(3);
-		q.enqueue(4);
-		q.enqueue(5);
-		System.out.println(q.isEmpty());
-		q.enqueue(6);
-		q.enqueue(6);
-		System.out.println(q.isEmpty());
-		q.enqueue(7);
-		System.out.println(q.dequeue());
-		System.out.println(q.dequeue());
-		System.out.println(q.dequeue());
-		System.out.println(q.dequeue());
-		System.out.println(q.dequeue());
+		linkedlist list = new linkedlist();
+		list.insertAtEnd(3);
+		list.insertAtEnd(4);
+		list.insertAtEnd(5);
+		list.insertAtEnd(6);
+		list.insertAtEnd(7);
+		list.insertAtEnd(8);
+		list.print();
+		list.reverse();
+		list.print();
 	}
 	
 	static linkedlist algo1(linkedlist list)
