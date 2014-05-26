@@ -2,20 +2,21 @@ import java.util.Scanner;
 public class main {
 	public static void main(String args[])
 	{
-		linkedlist list = new linkedlist();
-		list.insertSort(6);
-		list.insertSort(3);
-		list.insertSort(7);
-		list.insertSort(5);
-		list.insertSort(1);
-		list.insertSort(4);
-		list.print();
-		System.out.println();
-		Scanner s = new Scanner(System.in);
-		int n = s.nextInt();
-		int m = s.nextInt();
-		list = DeleteNnodesAfterMnodes(list,n,m);
-		list.print();
+		queue q = new queue(5);
+		System.out.println(q.isEmpty());
+		q.enqueue(3);
+		q.enqueue(4);
+		q.enqueue(5);
+		System.out.println(q.isEmpty());
+		q.enqueue(6);
+		q.enqueue(6);
+		System.out.println(q.isEmpty());
+		q.enqueue(7);
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue());
 	}
 	
 	static linkedlist algo1(linkedlist list)
